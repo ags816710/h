@@ -3,7 +3,7 @@ let config = {
     base: base,
     env: 'dev',
     port: undefined,
-    ignoreDomCount: 1,
+    ignoreDomCount: base.split('.').length,
     // ignoreDomCount: 2,
     redirects: {
         // '\\': 'https://google.com',
