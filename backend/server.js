@@ -8,6 +8,10 @@ const path = require('path');
 
 const { port, ignoreDomCount } = require('./config');
 
+if (!require('./auth')) {
+    throw new Error('Missing ./auth');
+}
+
 function reqe(path) {
     delete require.cache[require.resolve(path)];
     return require(path);
@@ -19,7 +23,7 @@ app.get('*', async (req, res) => {
     if (url.indexOf('?') > 0) {
         url = url.slice(0, url.indexOf('?'));
     }
-    console.log(url)
+    console.log(url);
 
     let sh = host.split('.');
     let subDom = '';

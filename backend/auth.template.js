@@ -1,12 +1,12 @@
 const autht = {
-    in: async (req, res) => {
-        return [false, '/index?redir=in']
+    file: async (req, res) => {
+        return [false, '/index?redir=/file']
     }
 }
 
 const lockedFiles = {
-    '\\in.html': autht.in,
-    '\\in': autht.in
+    '\\file.html': autht.file,
+    '\\file': autht.file
 };
 
 module.exports = {

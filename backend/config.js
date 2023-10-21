@@ -1,4 +1,6 @@
+const base = 'localhost'
 let config = {
+    base: base,
     env: 'dev',
     port: undefined,
     ignoreDomCount: 1,
@@ -6,7 +8,7 @@ let config = {
     redirects: {
         // '\\': 'https://google.com',
         // '\\something': 'https://google.org/',
-        'nv\\*': 'http://nvcrp.localhost',
+        'nv\\*': `http://nvcrp.${base}`,
     },
 };
 
